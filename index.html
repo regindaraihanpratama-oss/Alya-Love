@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Alya ❤️</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("foto.jpg");
+  background-size:cover;
+  background-position:center;
+  filter:blur(6px);
+  z-index:-1;
+}
+
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(12px);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  width:85%;
+  max-width:350px;
+  color:white;
+}
+
+.hidden{display:none}
+
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#ff69b4;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN 1 -->
+<div id="page1" class="card">
+  <h2>Hai Alya sayang ❤️</h2>
+  <p>Aku bikin sesuatu buat kamu 😆</p>
+  <button onclick="next(2)">Klik sini 💘</button>
+</div>
+
+<!-- HALAMAN 2 -->
+<div id="page2" class="card hidden">
+  <h2>Hmm... 😆</h2>
+  <p>lucu si kita kenal dari game</p>
+  <p>eh malah jadi sedeket ini</p>
+  <button onclick="next(3)">Lanjut 😚</button>
+</div>
+
+<!-- HALAMAN 3 -->
+<div id="page3" class="card hidden">
+  <h2>jujurly 🤔</h2>
+  <p>aku bingung mau ngomong apa</p>
+  <p>yaudah lanjut aja 😆</p>
+  <button onclick="alert('lanjut nanti kita bikin lagi 😏')">Finish 💘</button>
+</div>
+
+<script>
+function next(page){
+  document.querySelectorAll(".card").forEach(e=>e.classList.add("hidden"));
+  document.getElementById("page"+page).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
